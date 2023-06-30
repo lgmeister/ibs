@@ -1,0 +1,80 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://resources/scripts/main_game/bomb_fire.gd" type="Script" id=6]
+
+[sub_resource type="Animation" id=3]
+resource_name = "fire"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("FireParticles:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("FireParticles2:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Curve" id=4]
+_data = [ Vector2( 0, 0.542945 ), 0.0, 0.0, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="Gradient" id=2]
+offsets = PoolRealArray( 0, 0.552239, 1 )
+colors = PoolColorArray( 1, 0.977783, 0.1875, 1, 1, 0.218907, 0.0419776, 1, 1, 0, 0, 0 )
+
+[sub_resource type="Curve" id=5]
+_data = [ Vector2( 0, 0.530675 ), 0.0, 0.0, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
+
+[node name="bombFire" type="Node2D"]
+z_index = 6
+script = ExtResource( 6 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/fire = SubResource( 3 )
+
+[node name="FireParticles" type="CPUParticles2D" parent="."]
+position = Vector2( 4, -1 )
+amount = 30
+lifetime = 0.08
+emission_shape = 2
+emission_rect_extents = Vector2( 16, 1 )
+direction = Vector2( 0, -1 )
+spread = 0.0
+gravity = Vector2( 0, 0 )
+initial_velocity = 63.95
+scale_amount = 6.0
+scale_amount_curve = SubResource( 4 )
+color_ramp = SubResource( 2 )
+hue_variation = 0.13
+hue_variation_random = 1.0
+
+[node name="FireParticles2" type="CPUParticles2D" parent="."]
+position = Vector2( 4, -1 )
+amount = 30
+lifetime = 0.08
+emission_shape = 2
+emission_rect_extents = Vector2( 16, 1 )
+direction = Vector2( 0, 1 )
+spread = 0.0
+gravity = Vector2( 0, 0 )
+initial_velocity = 63.95
+scale_amount = 6.0
+scale_amount_curve = SubResource( 5 )
+color_ramp = SubResource( 2 )
+hue_variation = 0.13
+hue_variation_random = 1.0
