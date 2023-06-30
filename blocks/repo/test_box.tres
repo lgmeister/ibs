@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://resources/blocks/classes/class_block.gd" type="Script" id=1]
+[ext_resource path="res://resources/raw_resources/FutureFantasy/RMVX/tilesets/future_tileB_factory.png" type="Texture" id=2]
+
+[resource]
+script = ExtResource( 1 )
+block_name = "Block Box"
+block_image = ExtResource( 2 )
+block_frame = 64
+block_passthrough = false

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://resources/blocks/classes/class_block.gd" type="Script" id=1]
+[ext_resource path="res://resources/raw_resources/FutureFantasy/RMVX/tilesets/modern_tileA2.png" type="Texture" id=2]
+
+[resource]
+script = ExtResource( 1 )
+block_name = "Block Floor"
+block_image = ExtResource( 2 )
+block_frame = 56
+block_passthrough = true
