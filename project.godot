@@ -1,0 +1,60 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "Resource",
+"class": "BLOCK",
+"language": "GDScript",
+"path": "res://resources/blocks/classes/class_block.gd"
+}, {
+"base": "Resource",
+"class": "CHARACTER",
+"language": "GDScript",
+"path": "res://resources/characters/classes/class_character.gd"
+} ]
+_global_script_class_icons={
+"BLOCK": "",
+"CHARACTER": ""
+}
+
+[application]
+
+config/name="Idle Bomb Squad"
+run/main_scene="res://resources/scenes/main_game/game.tscn"
+config/icon="res://icon.png"
+
+[autoload]
+
+Global="*res://resources/scripts/general/Global.gd"
+
+[display]
+
+window/size/width=600
+window/size/height=1024
+window/stretch/mode="viewport"
+window/stretch/aspect="keep"
+
+[gui]
+
+common/drop_mouse_on_gui_input_disabled=true
+
+[layer_names]
+
+2d_physics/layer_1="Player"
+2d_physics/layer_3="Bombs"
+2d_physics/layer_9="Blocks"
+
+[physics]
+
+common/enable_pause_aware_picking=true
+
+[rendering]
+
+environment/default_environment="res://default_env.tres"
